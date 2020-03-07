@@ -46,7 +46,9 @@ workflows:
   buildit-deploy:
     jobs: 
       - buildit     
-      - deploy:          
+      - deploy:
+         requires:
+            - buildit     
           filters:
             tags:
               only: /^v.*/
