@@ -7,7 +7,8 @@
     "build": "webpack --mode production",
     "storybook": "start-storybook -p 9001",
     "docz:dev": "docz dev",
-    "docz:build": "docz build"
+    "docz:build": "docz build",
+    "bundlesize": "bundlesize"
   },
   "repository": {
     "type": "git",
@@ -48,7 +49,7 @@
   "bundlesize": [
     {
       "path": "./dist/react-zend.js",
-      "maxSize": "20 kB"
+      "maxSize": "2 kB"
    }
   ]
 }
