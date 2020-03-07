@@ -1,6 +1,6 @@
 {
   "name": "react-zend",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "description": "Simple react hook to support fetching data everywhere",
   "main": "dist/react-zend.js",
   "scripts": {
