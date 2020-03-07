@@ -10,6 +10,7 @@
     "docz:build": "docz build",
     "bundlesize": "bundlesize"
   },
+  "files": ["react-zend"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/neomaxzero/react-zend.git"
