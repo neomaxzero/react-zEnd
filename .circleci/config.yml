@@ -12,7 +12,28 @@ jobs:
             - run: npm install
             - run: npm run build            
             - run: npm run bundlesize
+  deploy:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Authenticate with registry
+          command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
+      - run:
+          name: Publish package
+          command: npm publish
+    
 workflows:
     build-and-publish:
       jobs:
         - build-and-publish
+        - deploy:
+          requires:
+            - test
+          filters:
+            tags:
+              only: /^v.*/
+            branches:
+              ignore: /.*/
+    
