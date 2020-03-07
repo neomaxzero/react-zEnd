@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cwlsn/rinse-react.git"
+    "url": "git+https://github.com/neomaxzero/react-zend.git"
   },
   "keywords": [
     "react",
@@ -20,12 +20,12 @@
     "request",
     "api"
   ],
-  "author": "Connor Wilson",
+  "author": "@neomazero",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cwlsn/rinse-react/issues"
+    "url": "https://github.com/neomaxzero/react-zend/issues"
   },
-  "homepage": "https://github.com/cwlsn/rinse-react#readme",
+  "homepage": "https://github.com/neomaxzero/react-zend#readme",
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.2.3",
