@@ -4,7 +4,7 @@ import handleErrors from './utils/fetch';
 import { ZFetchContext } from '../context/ZFetchContext';
 
 export const zEnd = (url) => {
-	const { resources, setResources } = useContext(ZFetchContext);
+	const { resources, setResources, fetchOptions } = useContext(ZFetchContext);
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(false);
 	const [trigger, setTrigger] = useState(false);
@@ -49,6 +49,7 @@ export const zEnd = (url) => {
 
 			fetch(url, {
 				body: JSON.stringify(body),
+				...fetchOptions,
 				...options.fetchOptions,
 			})
 				.then(handleErrors)

@@ -14,7 +14,7 @@ const cacheExpired = (timeCreated, cacheRefreshTime = 60) => {
 };
 
 const zFetch = (url, options = {}) => {
-	const { resources, setResources } = useContext(ZFetchContext);
+	const { resources, setResources, fetchOptions } = useContext(ZFetchContext);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(false);
 
@@ -25,6 +25,7 @@ const zFetch = (url, options = {}) => {
 		} else {
 			setLoading(true);
 			fetch(url, {
+				...fetchOptions,
 				...options,
 			})
 				.then(handleErrors)

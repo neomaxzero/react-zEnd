@@ -12,27 +12,52 @@ import { ZendProvider, zFetch } from './zend';
 // .add() takes a name and then a function that should return what you want
 // rendered in the rendering area
 
-storiesOf('zFetch').add('get request ', () => (
-	<ZendProvider>
-		{React.createElement(() => {
-			const { error, response, loading } = zFetch(
-				'https://random.dog/woof.json?ref=apilist.fun'
-			);
+storiesOf('zFetch')
+	.add('get request ', () => (
+		<ZendProvider>
+			{React.createElement(() => {
+				const { error, response, loading } = zFetch(
+					'https://random.dog/woof.json?ref=apilist.fun'
+				);
 
-			return loading ? (
-				'Loading: eZ Request'
-			) : (
-				<>
-					{error ? (
-						<span>Error: {error}</span>
-					) : (
-						<>
-							<h1>get request: done!</h1>
-							<img src={response.url} alt="dog" width="100%" />
-						</>
-					)}
-				</>
-			);
-		})}
-	</ZendProvider>
-));
+				return loading ? (
+					'Loading: eZ Request'
+				) : (
+					<>
+						{error ? (
+							<span>Error: {error}</span>
+						) : (
+							<>
+								<h1>get request: done!</h1>
+								<img src={response.url} alt="dog" width="100%" />
+							</>
+						)}
+					</>
+				);
+			})}
+		</ZendProvider>
+	))
+	.add('get request with default fetch options', () => (
+		<ZendProvider fetchOptions={{ credentials: 'include' }}>
+			{React.createElement(() => {
+				const { error, response, loading } = zFetch(
+					'https://random.dog/woof.json?ref=apilist.fun'
+				);
+
+				return loading ? (
+					'Loading: eZ Request'
+				) : (
+					<>
+						{error ? (
+							<span>It fails when credentials is set to be included.</span>
+						) : (
+							<>
+								<h1>get request: done!</h1>
+								<img src={response.url} alt="dog" width="100%" />
+							</>
+						)}
+					</>
+				);
+			})}
+		</ZendProvider>
+	));
