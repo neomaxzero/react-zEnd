@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="https://github.com/neomaxzero/react-zend/blob/master/public/logo.png" alt="logo react zend" width="200px"/>
+  <img src="https://github.com/neomaxzero/react-zend/blob/master/public/logo-caps.png?raw=true" alt="logo react zend"  width="200px"/>
 </p>
 
 [![CircleCI](https://circleci.com/gh/neomaxzero/react-zend.svg?style=svg)](https://circleci.com/gh/neomaxzero/react-zend)
