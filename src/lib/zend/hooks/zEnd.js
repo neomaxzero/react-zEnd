@@ -15,7 +15,7 @@ export const zEnd = (url) => {
 		setResources((oldResources) => ({
 			...oldResources,
 			[url]: {
-				data: resources[url].data,
+				data: resources[url] ? resources[url].data : {},
 				requested: new Date('01/01/1990').getTime(),
 			},
 		}));
